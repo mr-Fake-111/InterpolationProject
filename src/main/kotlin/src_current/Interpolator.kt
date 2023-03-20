@@ -1,4 +1,4 @@
-package src
+package src_current
 
 import SLAE_methods_functions.*
 import kotlin.math.pow

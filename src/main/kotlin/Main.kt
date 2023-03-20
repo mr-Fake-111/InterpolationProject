@@ -1,12 +1,11 @@
-import src.Interpolator
+import src_current.Interpolator
+import src_current.UserFunction
+import src_current.*
 
 fun main(args: Array<String>) {
-    val properties = Array<DoubleArray>(4) {DoubleArray(2)}
-    for(i in 0..3) {
-        properties[i][0] = i.toDouble()
-        properties[i][1] = Math.pow(i.toDouble(), 3.0) - 3.0
-    }
 
+
+    val properties = UserFunction.getNodes(getStandartNodes(0.0, 5*Math.PI, 6))
     val poly = Interpolator.interpolationPolynomialLagrange(properties)
-    print(poly.coefficients)
+    print(poly.toString())
 }

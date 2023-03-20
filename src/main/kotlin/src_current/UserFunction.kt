@@ -1,9 +1,9 @@
-package src
+package src_current
 
 import kotlin.math.pow
 import kotlin.math.sin
 
-class Function() {
+class UserFunction() {
    companion object {
 
        fun calculate(x: Double): Double {
