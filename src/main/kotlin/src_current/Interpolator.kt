@@ -82,9 +82,16 @@ class Interpolator {
             return spotVal
         }
 
-        fun interpolationSPLineLinear(nodes: HashMap<Double, Double>): Polynomial {
+        fun interpolationSplineLinear(nodes: Array<DoubleArray>): Array<Polynomial>? {
 
-            return Polynomial()
+            val coefficients: DoubleArray = DoubleArray(2*(nodes.size -1)) {0.0}
+
+            for(i in 0..2*(nodes.size -1)-1 step 2) {
+
+                coefficients[i] = (nodes[i/2+1][1] - nodes[i/2][1])/(nodes[i/2+1][0] - nodes[i/2][0])
+                coefficients[i+1] = (nodes[i/2+1][1]*nodes[i/2][0] - nodes[i/2][1]*nodes[i/2+1][0])/(nodes[i/2][0] - nodes[i/2+1][0])
+            }
+            return null
         }
     }
 }

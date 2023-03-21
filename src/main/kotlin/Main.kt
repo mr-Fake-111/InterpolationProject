@@ -11,4 +11,5 @@ fun main(args: Array<String>) {
     println(poly.toString())
     println(Interpolator.interpolationPolynomialNewton(properties, 3.0))
     println(Interpolator.interpolationPolynomialLagrange(properties, 3.0))
+    Interpolator.interpolationSplineLinear(properties)
 }
